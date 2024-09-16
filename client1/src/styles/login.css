@@ -1,0 +1,106 @@
+.login-container {
+    padding: 2rem;
+    padding-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--sansitaSwashed);
+    position: relative;
+
+    .forgot {
+        text-align: end;
+        margin: 1rem;
+        cursor:default;
+    }
+
+}
+
+.line {
+    border: 1px solid;
+    height: 2px;
+    width: 7rem;
+}
+
+.login-No-Account{
+    font-size: .9rem;
+    align-self: center;
+}
+
+.registerPage-link{
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(0, 195, 255);
+    cursor: pointer;
+    margin-left: .5rem;
+}
+
+.login-popup{
+    position: absolute;
+    z-index: 2;
+    min-height: 25rem;
+    min-width: 18rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+        flex-direction: column;
+        align-items: center;
+}
+
+.login-popup-title{
+    padding-top: .6rem;
+    padding-left: .7rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.login-popup-body{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 20rem;
+    gap: 1.3rem;
+}
+
+.login-popup-question{
+    margin-left: -1rem;
+    font-size: 1.1rem;
+}
+
+
+.login-backdrop{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 120svh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.575);
+}
+
+
+/* @media (max-width: 320px){
+    .login-backdrop{
+        width: 100rem;
+    }
+} */
+
+@media (min-width: 700px){
+    .login-container{
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 4rem;
+
+        div{
+            min-width: 40rem;
+        }
+    }
+
+    .login-popup{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

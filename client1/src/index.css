@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+AR:wght@100..400&family=Playwrite+BE+VLG:wght@100..400&family=Playwrite+CU:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Bubblegum+Sans&family=Expletus+Sans:ital,wght@0,400..700;1,400..700&family=Playpen+Sans:wght@100..800&family=Port+Lligat+Sans&family=Sansita+Swashed:wght@300..900&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&family=Sofia+Sans+Semi+Condensed:ital,wght@0,1..1000;1,1..1000&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --black: #111111;
+    --white: #ffff;
+    --golden: rgb(255, 195, 0);
+    --grey: rgba(245, 245, 245, 0.87);
+    --darkGrey: #d8d8d8;
+    --bluegrey: rgba(220, 238, 235, 0.897);
+    --cream: rgba(255, 251, 216, 0.993);
+    --darkPink1: #fb2080;
+    --purple: rgb(112, 2, 112);
+    --forestDark: rgb(19, 29, 25);
+    --oceanDark: rgb(4, 41, 33);
+    --greenCream: rgb(162, 252, 203);
+    --blueCream: rgb(139, 220, 211);
+    --greenDarkCream: #7af0af;
+    --blueDarkCream: rgb(64, 193, 176);
+
+    /* All Shades */
+
+    /* Red */
+    --red0: #ffebee;
+    --red1: #ffcdd2;
+    --red2: #ef9a9a;
+    --red3: #e57373;
+    --red4: #ef5350;
+    --red5: #f44336;
+    --red6: #e53935;
+    --red7: #d32f2f;
+    --red8: #c62828;
+    --red9: #b71c1c;
+    --redAccent0: #ff8a80;
+    --redAccent1: #ff5252;
+    --redAccent2: #ff1744;
+    --redAccent3: #d50000;
+
+
+    /* Pink */
+    --pink0: #fce4ec;
+    --pink1: #f8bbd0;
+    --pink2: #f48fb1;
+    --pink3: #f06292;
+    --pink4: #ec407a;
+    --pink5: #e91e63;
+    --pink6: #d81b60;
+    --pink7: #c2185b;
+    --pink8: #ad1457;
+    --pink9: #880e4f;
+    --pinkAccent0: #ff80ab;
+    --pinkAccent1: #ff4081;
+    --pinkAccent2: #f50057;
+    --pinkAccent3: #c51162;
+
+
+    /* Purple */
+    --purple0: #f3e5f5;
+    --purple1: #e1bee7;
+    --purple2: #ce93d8;
+    --purple3: #ba68c8;
+    --purple4: #ab47bc;
+    --purple5: #9c27b0;
+    --purple6: #8e24aa;
+    --purple7: #7b1fa2;
+    --purple8: #6a1b9a;
+    --purple9: #4a148c;
+    --purpleAccent0: #ea80fc;
+    --purpleAccent1: #e040fb;
+    --purpleAccent2: #d500f9;
+    --purpleAccent3: #aa00ff;
+
+
+
+    /* deep Puprple */
+    --deepPurple0: #ede7f6;
+    --deepPurple1: #d1c4e9;
+    --deepPurple2: #b39ddb;
+    --deepPurple3: #9575cd;
+    --deepPurple4: #7e57c2;
+    --deepPurple5: #673ab7;
+    --deepPurple6: #5e35b1;
+    --deepPurple7: #512da8;
+    --deepPurple8: #4527a0;
+    --deepPurple9: #311b92;
+    --deepPurpleAccent0: #b388ff;
+    --deepPurpleAccent1: #7c4dff;
+    --deepPurpleAccent2: #651fff;
+    --deepPurpleAccent3: #6200ea;
+
+
+    /* indigo */
+    --indigo0: #e8eaf6;
+    --indigo1: #c5cae9;
+    --indigo2: #9fa8da;
+    --indigo3: #7986cb;
+    --indigo4: #5c6bc0;
+    --indigo5: #3f51b5;
+    --indigo6: #3949ab;
+    --indigo7: #303f9f;
+    --indigo8: #283593;
+    --indigo9: #1a237e;
+    --indigoAccent0: #8c9eff;
+    --indigoAccent1: #536dfe;
+    --indigoAccent2: #3d5afe;
+    --indigoAccent3: #304ffe;
+
+
+
+    /* blue */
+    --blue0: #e3f2fd;
+    --blue0: #e3f2fd;
+    --blue1: #bbdefb;
+    --blue2: #90caf9;
+    --blue3: #64b5f6;
+    --blue4: #42a5f5;
+    --blue5: #2196f3;
+    --blue6: #1e88e5;
+    --blue7: #1976d2;
+    --blue8: #1565c0;
+    --blue9: #0d47a1;
+    --blueAccent0: #82b1ff;
+    --blueAccent1: #448aff;
+    --blueAccent2: #2979ff;
+    --blueAccent3: #2962ff;
+
+
+    /* lightblue */
+    --lightBlue0: #e1f5fe;
+    --lightBlue1: #b3e5fc;
+    --lightBlue2: #81d4fa;
+    --lightBlue3: #4fc3f7;
+    --lightBlue4: #29b6f6;
+    --lightBlue5: #03a9f4;
+    --lightBlue6: #039be5;
+    --lightBlue7: #0288d1;
+    --lightBlue8: #0277bd;
+    --lightBlue9: #01579b;
+    --lightBlueAccent0: #80d8ff;
+    --lightBlueAccent1: #40c4ff;
+    --lightBlueAccent2: #00b0ff;
+    --lightBlueAccent3: #0091ea;
+
+
+    /* cyan */
+    --cyan0: #e0f7fa;
+    --cyan1: #b2ebf2;
+    --cyan2: #80deea;
+    --cyan3: #4dd0e1;
+    --cyan4: #26c6da;
+    --cyan5: #00bcd4;
+    --cyan6: #00acc1;
+    --cyan7: #0097a7;
+    --cyan8: #00838f;
+    --cyan9: #006064;
+    --cyanAccent0: #84ffff;
+    --cyanAccent1: #18ffff;
+    --cyanAccent2: #00e5ff;
+    --cyanAccent3: #00b8d4;
+
+
+    /* teal */
+    --teal0: #e0f2f1;
+    --teal1: #b2dfdb;
+    --teal2: #80cbc4;
+    --teal3: #4db6ac;
+    --teal4: #26a69a;
+    --teal5: #009688;
+    --teal6: #00897b;
+    --teal7: #00796b;
+    --teal8: #00695c;
+    --teal9: #004d40;
+    --tealAccent0: #a7ffeb;
+    --tealAccent1: #64ffda;
+    --tealAccent2: #1de9b6;
+    --tealAccent3: #00bfa5;
+
+
+    /* green */
+    --green0: #e8f5e9;
+    --green1: #c8e6c9;
+    --green2: #a5d6a7;
+    --green3: #81c784;
+    --green4: #66bb6a;
+    --green5: #4caf50;
+    --green6: #43a047;
+    --green7: #388e3c;
+    --green8: #2e7d32;
+    --green9: #1b5e20;
+    --greenAccent0: #b9f6ca;
+    --greenAccent1: #69f0ae;
+    --greenAccent2: #00e676;
+    --greenAccent3: #00c853;
+
+
+    /* lightgreen */
+    --lightGreen0: #f1f8e9;
+    --lightGreen1: #dcedc8;
+    --lightGreen2: #c5e1a5;
+    --lightGreen3: #aed581;
+    --lightGreen4: #9ccc65;
+    --lightGreen5: #8bc34a;
+    --lightGreen6: #7cb342;
+    --lightGreen7: #689f38;
+    --lightGreen8: #558b2f;
+    --lightGreen9: #33691e;
+    --lightGreenAccent0: #ccff90;
+    --lightGreenAccent1: #b2ff59;
+    --lightGreenAccent2: #76ff03;
+    --lightGreenAccent3: #64dd17;
+
+
+    /* lime */
+    --lime0: #f9fbe7;
+    --lime1: #f0f4c3;
+    --lime2: #e6ee9c;
+    --lime3: #dce775;
+    --lime4: #d4e157;
+    --lime5: #cddc39;
+    --lime6: #c0ca33;
+    --lime7: #afb42b;
+    --lime8: #9e9d24;
+    --lime9: #827717;
+    --limeAccent0: #f4ff81;
+    --limeAccent1: #eeff41;
+    --limeAccent2: #c6ff00;
+    --limeAccent3: #aeea00;
+
+
+    /* yelllow */
+    --yellow0: #fffde7;
+    --yellow1: #fff9c4;
+    --yellow2: #fff59d;
+    --yellow3: #fff176;
+    --yellow4: #ffee58;
+    --yellow5: #ffeb3b;
+    --yellow6: #fdd835;
+    --yellow7: #fbc02d;
+    --yellow8: #f9a825;
+    --yellow9: #f57f17;
+    --yellowAccent0: #ffff8d;
+    --yellowAccent1: #ffff00;
+    --yellowAccent2: #ffea00;
+    --yellowAccent3: #ffd600;
+
+
+    /* amber */
+    --amber0: #fff8e1;
+    --amber1: #ffecb3;
+    --amber2: #ffe082;
+    --amber3: #ffd54f;
+    --amber4: #ffca28;
+    --amber5: #ffc107;
+    --amber6: #ffb300;
+    --amber7: #ffa000;
+    --amber8: #ff8f00;
+    --amber9: #ff6f00;
+    --amberAccent0: #ffe57f;
+    --amberAccent1: #ffd740;
+    --amberAccent2: #ffc400;
+    --amberAccent3: #ffab00;
+
+
+    /* orange */
+    --orange0: #fff3e0;
+    --orange1: #ffe0b2;
+    --orange2: #ffcc80;
+    --orange3: #ffb74d;
+    --orange4: #ffa726;
+    --orange5: #ff9800;
+    --orange6: #fb8c00;
+    --orange7: #f57c00;
+    --orange8: #ef6c00;
+    --orange9: #e65100;
+    --orangeAccent0: #ffd180;
+    --orangeAccent1: #ffab40;
+    --orangeAccent2: #ff9100;
+    --orangeAccent3: #ff6d00;
+
+    /* deepOrange */
+    --deepOrange0: #fbe9e7;
+    --deepOrange1: #ffccbc;
+    --deepOrange2: #ffab91;
+    --deepOrange3: #ff8a65;
+    --deepOrange4: #ff7043;
+    --deepOrange5: #ff5722;
+    --deepOrange6: #f4511e;
+    --deepOrange7: #e64a19;
+    --deepOrange8: #d84315;
+    --deepOrange9: #bf360c;
+    --deepOrangeAccent0: #ff9e80;
+    --deepOrangeAccent1: #ff6e40;
+    --deepOrangeAccent2: #ff3d00;
+    --deepOrangeAccent3: #dd2c00;
+
+    /* brown */
+    --brown0: #efebe9;
+    --brown1: #d7ccc8;
+    --brown2: #bcaaa4;
+    --brown3: #a1887f;
+    --brown4: #8d6e63;
+    --brown5: #795548;
+    --brown6: #6d4c41;
+    --brown7: #5d4037;
+    --brown8: #4e342e;
+    --brown9: #3e2723;
+
+    /* grey */
+    --grey0: #fafafa;
+    --grey1: #f5f5f5;
+    --grey2: #eeeeee;
+    --grey3: #e0e0e0;
+    --grey4: #bdbdbd;
+    --grey5: #9e9e9e;
+    --grey6: #757575;
+    --grey7: #616161;
+    --grey8: #424242;
+    --grey9: #212121;
+
+    /* bluegrey */
+    --blueGrey0: #eceff1;
+    --blueGrey1: #cfd8dc;
+    --blueGrey2: #b0bec5;
+    --blueGrey3: #90a4ae;
+    --blueGrey4: #78909c;
+    --blueGrey5: #607d8b;
+    --blueGrey6: #546e7a;
+    --blueGrey7: #455a64;
+    --blueGrey8: #37474f;
+    --blueGrey9: #263238;
+
+
+
+    /* green and cream */
+    --greenandcream0: #b3c1b4;
+    --greenandcream1: #88a590;
+    --greenandcream2: #638a75;
+    --greenandcream3: #446e5f;
+    --greenandcream4: #2a5c50;
+    --greenandcream5: #163727;
+    --greenandcream6: #081c15;
+
+
+    /* green and cream brighter */
+    --greanandcreambrighter0: #e0f1cd;
+    --greanandcreambrighter1: #abd89c;
+    --greanandcreambrighter2: #71c072;
+    --greanandcreambrighter3: #4da767;
+    --greanandcreambrighter4: #2f8f65;
+    --greanandcreambrighter5: #177667;
+    --greanandcreambrighter6: #06545e;
+
+    /* aqua blue */
+    --aquablue0: #57f6e7;
+    --aquablue1: #42dad9;
+    --aquablue2: #30b2be;
+    --aquablue3: #208ca2;
+    --aquablue4: #146886;
+    --aquablue5: #0a4969;
+    --aquablue6: #032d4d;
+
+    /* calmer night */
+    --calmernight0: #fbe4d8;
+    --calmernight0: #dfb6b2;
+    --calmernight0: #854f6c;
+    --calmernight0: #522b5b;
+    --calmernight0: #2b124c;
+    --calmernight0: #190019;
+
+    /* royal blue and cream */
+    --royalblueandcream0: #e3c39d;
+    --royalblueandcream1: #a68868;
+    --royalblueandcream2: #cdd5db;
+    --royalblueandcream3: #a4b5c4;
+    --royalblueandcream4: #4b6382;
+    --royalblueandcream5: #071739;
+
+    /* devils kitchen */
+    --devilskitchen0: #ad2831;
+    --devilskitchen1: #800e13;
+    --devilskitchen2: #640d14;
+    --devilskitchen3: #38040e;
+    --devilskitchen4: #250902;
+
+    /* rosewood */
+    --rosewood0: #fff0f3;
+    --rosewood1: #ffccd5;
+    --rosewood2: #ffb3c1;
+    --rosewood3: #ff8fa3;
+    --rosewood4: #ff758f;
+    --rosewood5: #ff4d6d;
+    --rosewood6: #c9184a;
+    --rosewood7: #a4133c;
+    --rosewood8: #800f2f;
+    --rosewood9: #590d22;
+
+    --titleFont: "Playwrite BE VLG", cursive;
+    --mainFont: "Poppins", sans-serif;
+    --shantellSans: "Shantell Sans", cursive;
+    --sansitaSwashed: "Sansita Swashed", system-ui;
+    --expletusSans: "Expletus Sans", sans-serif;
+    --sofiaSans: "Sofia Sans Semi Condensed", sans-serif;
+    --balsamiqSans: "Balsamiq Sans", sans-serif;
+    --bubbleGumSans: "Bubblegum Sans", sans-serif;
+    --logoFontWeight: 400;
+    --mainFontWeight: 300;
+    --max-width: 100%;
+    --min-width: 0px;
+    --linearGradient1: linear-gradient(34deg, rgba(0, 25, 117, 1) 0%, rgba(3, 144, 87, 1) 84%);
+}
+
+body {
+    font-family: var(--mainFont);
+    max-width: var(--max-width);
+    min-width: var(--min-width);
+    scrollbar-width: none;
+}
+
+/* body ::-webkit-scrollbar {
+    width: '14px'
+} */
+
