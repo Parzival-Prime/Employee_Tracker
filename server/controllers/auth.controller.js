@@ -34,6 +34,7 @@ const generateAccessAndRefreshToken = async (userId) => {
 
 export const loginController = async (req, res) => {
     try {
+        console.log(req.body)
         const { email, password } = req.body
 
         if (!password && !email) {

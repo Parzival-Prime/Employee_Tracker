@@ -75,6 +75,8 @@ function Login() {
     e.preventDefault();
 
     try {
+      console.log("email: ", email)
+      console.log("password: ", password)
       const { data } = await axiosInstance.post(`/api/v1/auth/login`, { email, password });
 
       if (data?.success) {

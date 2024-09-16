@@ -5,8 +5,7 @@ export const counterSlice = createSlice({
     initialState: {
         showPreview: true,
         isLoggedIn: false,
-        isAdmin: false,
-        theme: 'dark'
+        isAdmin: false
     },
     reducers: {
         setShowPreviewFalse: (state) => {
@@ -35,11 +34,7 @@ export const counterSlice = createSlice({
         setIsAdminTrue: (state) => {
             state.isAdmin = true; // This is handled immutably by Immer
             // console.log('Counter says admin true')
-        },
-
-        toggleTheme: (state) => {
-            state.theme = state.theme === 'light' ? 'dark' : 'light'; // This is handled immutably by Immer
-        },
+        }
     }
 });
 
@@ -49,8 +44,7 @@ export const {
     setIsLoggedInFalse,
     setIsLoggedInTrue,
     setIsAdminTrue,
-    setIsAdminFalse,
-    toggleTheme
+    setIsAdminFalse
 } = counterSlice.actions;
 
 export default counterSlice.reducer;

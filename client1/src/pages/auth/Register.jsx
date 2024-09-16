@@ -8,12 +8,12 @@ import { RiUploadCloud2Line as CloudUploadIcon } from "@remixicon/react";
 import { axiosInstance } from "../../../baseurl.js";
 import Loader from "../../components/Loader";
 import { useDispatch } from "react-redux";
-// // import {
-// //   setIsLoggedInTrue,
-// //   setIsLoggedInFalse,
-// //   setIsAdminTrue,
-// //   setIsAdminFalse,
-// // } from "../../features/counter/counterSlice.js";
+import {
+  setIsLoggedInTrue,
+  setIsLoggedInFalse,
+  setIsAdminTrue,
+  setIsAdminFalse,
+} from "../../features/counter/counterSlice.js";
 
 function Register() {
   const dispatch = useDispatch()
