@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "cbuild": "node build.js",
+    "start": "serve -s dist"
   },
   "dependencies": {
     "@mui/material": "^6.1.0",
