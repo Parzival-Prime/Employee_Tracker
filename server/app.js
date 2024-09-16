@@ -26,20 +26,20 @@ app.use(express.static("public"))
 app.use(morgan('dev'))
 app.use(cookieParser())
 
-// app.options('/health', cors());
+app.options('/health', cors());
 
 //routes
 app.use('/api/v1/auth', authRoute)
 
 // HealthCheck endpoint config
-// app.get('/health', (req, res) => {
-//   try {
-//     res.set('Cache-Control', 'no-store');
-//     return res.status(200).send('OK');
-//   } catch (error) {
-//     res.set('Cache-Control', 'no-store');
-//     res.status(500).send('Error');
-//   }
-// });
+app.get('/health', (req, res) => {
+  try {
+    res.set('Cache-Control', 'no-store');
+    return res.status(200).send('OK');
+  } catch (error) {
+    res.set('Cache-Control', 'no-store');
+    res.status(500).send('Error');
+  }
+});
 
 export { app }
