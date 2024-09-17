@@ -5,33 +5,39 @@ function HomePage() {
   const [marker, setMarker] = useState(null);
   const [location, setLocation] = useState({ lng: null, lat: null });
 
+  const initializeMap = () => {
+    const platform = new window.H.service.Platform({
+      apikey: 'VL9ecENRR3wuUoSiUh92on-jTZUW0XU2Bpg0ghfjhjU', // Replace with your HERE API key
+    });
+
+    const defaultLayers = platform.createDefaultLayers();
+
+    const mapContainer = document.getElementById('mapContainer');
+    const hMap = new window.H.Map(
+      mapContainer,
+      defaultLayers.vector.normal.map,
+      {
+        zoom: 15,
+        center: { lng: location.lng || 0, lat: location.lat || 0 },
+      }
+    );
+
+    const behavior = new window.H.mapevents.Behavior(
+      new window.H.mapevents.MapEvents(hMap)
+    );
+
+    const ui = window.H.ui.UI.createDefault(hMap, defaultLayers);
+
+    setMap(hMap);
+  };
+
   useEffect(() => {
-    // Initialize the map only once when the component mounts
-    if (!map) {
-      const initializeMap = () => {
-        const platform = new window.H.service.Platform({
-          apikey: 'VL9ecENRR3wuUoSiUh92on-jTZUW0XU2Bpg0ghfjhjU', // Replace with your HERE API key
-        });
-
-        const defaultLayers = platform.createDefaultLayers();
-        const mapContainer = document.getElementById('mapContainer');
-
-        const hMap = new window.H.Map(
-          mapContainer,
-          defaultLayers.vector.normal.map,
-          {
-            zoom: 15,
-            center: { lat: location.lat || 0, lng: location.lng || 0 },
-          }
-        );
-
-        new window.H.mapevents.Behavior(new window.H.mapevents.MapEvents(hMap));
-        window.H.ui.UI.createDefault(hMap, defaultLayers);
-
-        setMap(hMap);
-      };
+    // Initialize the map when the component mounts
+    if (map === null) {
+      initializeMap()
     }
 
+    
     // Load HERE Maps script dynamically
     const loadHereMapScript = () => {
       const script = document.createElement('script');
