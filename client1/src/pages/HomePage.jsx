@@ -103,7 +103,7 @@ function HomePage() {
           (error) => {
             console.error('Error tracking location', error);
           },
-          { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 }
+          { enableHighAccuracy: true, timeout: 50000, maximumAge: 0 }
         );
       } else {
         alert('Geolocation is not supported by this browser.');
