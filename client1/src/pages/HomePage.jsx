@@ -124,7 +124,7 @@ function HomePage() {
 
   return (
     <div>
-      <div className="mapContainer" style={{ height: '70vh', width: '100%', overflow: 'hidden', position: 'relative' }}>
+      <div className="mapContainer" style={{ height: '100vh', width: '100%', overflow: 'hidden', position: 'relative' }}>
         <div id="mapContainer" style={{ height: '100%', width: '100%' }}></div>
       </div>
     </div>
