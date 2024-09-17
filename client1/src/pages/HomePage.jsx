@@ -3,35 +3,34 @@ import { useState, useEffect } from 'react';
 function HomePage() {
   const [map, setMap] = useState(null);
   const [marker, setMarker] = useState(null);
-  const [location, setLocation] = useState({ lat: null, lng: null });
+  const [location, setLocation] = useState({ lng: null, lat: null });
 
   useEffect(() => {
-    // Initialize the map when the component mounts
-    const initializeMap = () => {
-      const platform = new window.H.service.Platform({
-        apikey: 'VL9ecENRR3wuUoSiUh92on-jTZUW0XU2Bpg0ghfjhjU', // Replace with your HERE API key
-      });
+    // Initialize the map only once when the component mounts
+    if (!map) {
+      const initializeMap = () => {
+        const platform = new window.H.service.Platform({
+          apikey: 'VL9ecENRR3wuUoSiUh92on-jTZUW0XU2Bpg0ghfjhjU', // Replace with your HERE API key
+        });
 
-      const defaultLayers = platform.createDefaultLayers();
+        const defaultLayers = platform.createDefaultLayers();
+        const mapContainer = document.getElementById('mapContainer');
 
-      const mapContainer = document.getElementById('mapContainer');
-      const hMap = new window.H.Map(
-        mapContainer,
-        defaultLayers.vector.normal.map,
-        {
-          zoom: 15,
-          center: { lat: location.lat || 0, lng: location.lng || 0 },
-        }
-      );
+        const hMap = new window.H.Map(
+          mapContainer,
+          defaultLayers.vector.normal.map,
+          {
+            zoom: 15,
+            center: { lat: location.lat || 0, lng: location.lng || 0 },
+          }
+        );
 
-      const behavior = new window.H.mapevents.Behavior(
-        new window.H.mapevents.MapEvents(hMap)
-      );
+        new window.H.mapevents.Behavior(new window.H.mapevents.MapEvents(hMap));
+        window.H.ui.UI.createDefault(hMap, defaultLayers);
 
-      const ui = window.H.ui.UI.createDefault(hMap, defaultLayers);
-
-      setMap(hMap);
-    };
+        setMap(hMap);
+      };
+    }
 
     // Load HERE Maps script dynamically
     const loadHereMapScript = () => {
@@ -71,9 +70,9 @@ function HomePage() {
           (position) => {
             const lat = position.coords.latitude;
             const lng = position.coords.longitude;
-            setLocation({ lat, lng });
+            setLocation({ lng, lat });
             if (map) {
-              updateMap(lat, lng);
+              updateMap(lng, lat);
             }
           },
           (error) => {
@@ -92,9 +91,9 @@ function HomePage() {
           (position) => {
             const lat = position.coords.latitude;
             const lng = position.coords.longitude;
-            setLocation({ lat, lng });
+            setLocation({ lng, lat });
             if (map) {
-              updateMap(lat, lng);
+              updateMap(lng, lat);
             }
           },
           (error) => {
@@ -111,14 +110,14 @@ function HomePage() {
     trackUserLocation();
   }, [map]);
 
-  const updateMap = (lat, lng) => {
+  const updateMap = (lng, lat) => {
     if (map && !marker) {
-      const hMarker = new window.H.map.Marker({ lat, lng });
+      const hMarker = new window.H.map.Marker({ lng, lat });
       map.addObject(hMarker);
       setMarker(hMarker);
     } else if (marker) {
-      marker.setGeometry({ lat, lng });
-      map.setCenter({ lat, lng });
+      marker.setGeometry({ lng, lat });
+      map.setCenter({ lng, lat });
     }
   };
 
