@@ -10,7 +10,7 @@ function HomePage() {
     // Initialize the map when the component mounts
     const initializeMap = () => {
       const platform = new window.H.service.Platform({
-        apikey: 'YOUR_HERE_API_KEY', // Replace with your HERE API key
+        apikey: 'VL9ecENRR3wuUoSiUh92on-jTZUW0XU2Bpg0ghfjhjU', // Replace with your HERE API key
       });
 
       const defaultLayers = platform.createDefaultLayers();
